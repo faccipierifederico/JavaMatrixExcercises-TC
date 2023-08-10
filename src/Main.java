@@ -34,7 +34,7 @@ public class Main {
         // En la última fila, agregar los promedios de las 3 notas.
         // Luego, mostrar todo por pantalla.
 
-        Double matrix [][] = new Double[4][4];
+/*        Double matrix [][] = new Double[4][4];
         Scanner scanner = new Scanner(System.in);
         Double count = 0.0;
 
@@ -54,6 +54,55 @@ public class Main {
                 System.out.println("Grade " + (c+1) + " is: " + matrix[r][c]);
             }
             System.out.println("The average of the grades is: " + matrix[r][3]);
+        }*/
+
+
+        // EXC 3
+        // Realizar 3 vectores diferentes. En el primero colocar ciudades, y en los otros dos temperaturas mínimas y máximas respectivamente.
+        // Luego mostrar por pantalla qué ciudad tubo T mínima y cuál la máxima.
+
+        String cities[] = new String[5];
+        Double min[] = new Double[5];
+        Double max[] = new Double[5];
+
+        Scanner city = new Scanner(System.in);
+        Scanner temp = new Scanner(System.in);
+
+        for (int i=0; i< cities.length; i++) {
+            System.out.println("Write the name of the city " + (i+1));
+            cities[i] = city.nextLine();
+
+            System.out.println("Write the min T of the city " + (i+1));
+            min[i] = temp.nextDouble();
+
+            System.out.println("Write the max T of the city " + (i+1));
+            max[i] = temp.nextDouble();
         }
-    }
+
+        Double minium = 99999.00;
+        int posMin = -1;
+
+        for (int i=0; i< cities.length; i++) {
+            if (min[i]<minium) {
+                minium = min[i];
+                posMin = i;
+            }
+
+        }
+
+        Double maximum = -99999.00;
+        int posMax = -1;
+
+        for (int i=0; i< cities.length; i++) {
+            if (max[i]>maximum) {
+                maximum = max[i];
+                posMax = i;
+            }
+        }
+        System.out.println("The minium T was: " + minium);
+        System.out.println("And happened in: " + cities[posMin]);
+        System.out.println("The maximum T was: " + maximum);
+        System.out.println("And happened in: " + cities[posMax]);
+
+     }
 }
